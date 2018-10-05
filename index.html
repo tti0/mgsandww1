@@ -9,22 +9,22 @@
     <link href="lib/css/angular-loading-bar.min.css" rel="stylesheet">
     <!-- Favicon -->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
-    <title>MGS and WWI</title>
-    <meta name="description" content="A website with searchable details of Old Mancunians who fought in the First World War, and details of the war's links to the school more generally."/>
-    <meta name="theme-color" content="#007bff"/>
+    <title>MGS and WW1</title>
+    <meta name="description" content="A website with searchable details of Old Mancunians who fought in the First World War, and details of the school's links to the war more generally."/>
+    <meta name="theme-color" content="#dc3545"/>
   </head>
 
-  <body ng-app="sdApp" ng-controller="global">
+  <body ng-app="warApp" ng-controller="global">
     <noscript>
       <div style="position:fixed;top:0;left:0;bottom:0;right:0;z-index:41;background-color:lightgray;padding:25vh 10% 0;text-align:center;">
         <h1>Please enable JavaScript.</h1>
-        <p>The MGS and WWI website relies on JavaScript to create a smooth experience. Without it, using the website is practically impossible. To make this warning disappear, please enable JavaScript. <a href="https://www.enable-javascript.com/" target="_blank">Click here to find out how to enable JavaScript.</a></p>
+        <p>The MGS and WW1 website relies on JavaScript to create a smooth experience. Without it, using the website is practically impossible. To make this warning disappear, please enable JavaScript. <a href="https://www.enable-javascript.com/" target="_blank">Click here to find out how to enable JavaScript.</a></p>
       </div>
     </noscript>
     <nav class="navbar navbar-expand-lg navbar-dark bg-danger mb-3">
       <a class="navbar-brand" href="#!">
-        <img src="lib/img/mgs_white_logo.svg" alt="MGS Logo vector" style="width:60px;">
-        MGS and WWI
+        <img src="lib/mgs_white_logo.svg" alt="MGS Logo vector" style="width:60px;">
+        MGS and WW1
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#n-content">
         <span class="navbar-toggler-icon"></span>
@@ -34,6 +34,15 @@
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
             <a href="#!" class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="#!/query" class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show">Data query</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button">In memoriam</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button">Primary sources</a>
           </li>
           <li class="nav-item">
             <a href="#!/about" class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show">About</a>
@@ -55,15 +64,14 @@
     <!-- Loading bar Angular library -->
     <script src="lib/js/angular-loading-bar.min.js"></script>
     <!-- Main custom JS -->
-    <script src="lib/js/mgsandwwi.js"></script>
+    <script src="lib/js/mgsandww1.js"></script>
     <!-- Font Awesome Icons set-->
-    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity=
-	"sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
-	<!-- jQuery -->
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+	   <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-	<!-- Popper JS (needed for Bootstrap) -->
+	   <!-- Popper JS (needed for Bootstrap) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/popper.min.js" integrity="sha256-FCiJD1Xk+2itXYf5YdFQrPURijNogcXySEApUqeRwHc=" crossorigin="anonymous"></script>
-	<!-- Bootstrap CSS -->
+	   <!-- Bootstrap CSS -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 
   </body>
