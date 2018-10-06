@@ -59,7 +59,7 @@
       </tr>
       <tr>
         <th scope="row">Date of birth:</th>
-        <td>{{ ourData.dob }}</td>
+        <td>{{ ourData.dob | date:"dd MMMM yyyy" }}</td>
       </tr>
       <tr>
         <th scope="row">Place of residence:</th>
@@ -105,7 +105,7 @@
       </tr>
       <tr>
         <th scope="row">Date of death:</th>
-        <td>{{ ourData.dod }}</td>
+        <td>{{ ourData.dod | date:"dd MMMM yyyy" }}</td>
       </tr>
       <tr>
         <th scope="row">Age at death:</th>
