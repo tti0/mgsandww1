@@ -1,0 +1,169 @@
+<nav>
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#!">Home</a></li>
+    <li class="breadcrumb-item"><a href="#!/doQuery">Data query</a></li>
+    <li class="breadcrumb-item active">Query result</li>
+  </ol>
+</nav>
+
+<h3><i class="fas fa-book-open"></i> Query result</h3>
+
+<div class="alert alert-warning" role="alert" ng-if="!hit"> <!-- show this if we don't have a matching record -->
+  No record matching siteIndex {{ indexToCheck }} found in the dataset. Try running a <a href="#!/doQuery" class="alert-link">Data query</a> again...
+</div>
+
+<span ng-if="hit"> <!-- show this if we do have a matching record -->
+  <div class="alert alert-success" role="alert">
+    Record matching siteIndex {{ indexToCheck }} found.
+  </div>
+
+  <div class="row">
+    <div class="col-sm">
+      <button type="button" class="btn btn-secondary btn-lg btn-block pb-2"><i class="fas fa-file-pdf"></i> Export this record to PDF (for printing)</button>
+    </div>
+    <div class="col-sm">
+      <button type="button" class="btn btn-secondary btn-lg btn-block pb-2"><i class="fab fa-js-square"></i> Download this record's raw JSON data</button>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="media">
+    <span ng-if="ourData.hasPhotos === false"> <!-- if our record does not have any photos, show a no result image -->
+      <img src="lib/noresult_600x400px.png" alt="No result" class="mr-3 rounded" width="350px">
+    </span>
+    <span ng-if="ourData.hasPhotos === true"> <!-- otherwise, show the main photo -->
+      <img src="{{ ourData.photos[0].path }}" alt="{{ ourData.photos[0].alt }}" class="mr-3 rounded" width="350px">
+    </span>
+    <div class="media-body">
+      <h4>
+        {{ ourData.surname }},&nbsp;{{ ourData.firstnames }}
+        <small class="text-muted">siteIndex: {{ ourData.siteIndex }}</small>
+      </h4>
+    </div>
+  </div>
+
+  <hr>
+
+  <h4>Personal details</h4>
+
+  <table class="table table-striped">
+    <tbody>
+      <tr>
+        <th scope="row">Surname:</th>
+        <td>{{ ourData.surname }}</td>
+      </tr>
+      <tr>
+        <th scope="row">First name(s):</th>
+        <td>{{ ourData.firstnames }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Date of birth:</th>
+        <td>{{ ourData.dob }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Place of residence:</th>
+        <td>{{ ourData.placeOfResidence }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Familial notes:</th>
+        <td>{{ ourData.notesFamily }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4>School career</h4>
+
+  <table class="table table-striped">
+    <tbody>
+      <tr>
+        <th scope="row">Started at MGS:</th>
+        <td>{{ ourData.MGSstarted }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Left MGS:</th>
+        <td>{{ ourData.MGSleft }}</td>
+      </tr>
+      <tr>
+        <th scope="row">School notes:</th>
+        <td>{{ ourData.notesSchool }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4>Military career</h4>
+
+  <table class="table table-striped">
+    <tbody>
+      <tr>
+        <th scope="row">Rank:</th>
+        <td>{{ ourData.rank }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Service number:</th>
+        <td>{{ ourData.serviceNumber }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Date of death:</th>
+        <td>{{ ourData.dod }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Age at death:</th>
+        <td>{{ ourData.aad }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Regiment:</th>
+        <td>{{ ourData.regiment }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Location of burial:</th>
+        <td>{{ ourData.burial[0].subdivision }}<br>{{ ourData.burial[0].place }}<br>{{ ourData.burial[0].region }}<br>{{ ourData.burial[0].country }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Commonwealth War Graves reference:</th>
+        <td><a href="{{ ourData.cwg }}" target="_blank">{{ ourData.cwg }}</a></td>
+      </tr>
+      <tr>
+        <th scope="row">Miltary notes:</th>
+        <td>{{ ourData.notesMilitary }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4>Additional notes</h4>
+
+  <table class="table table-striped">
+    <tbody>
+      <tr>
+        <td>{{ ourData.notesExtra }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4>Photographs</h4>
+
+  <span ng-if="ourData.hasPhotos === false">
+    <p>No photographs are avaliable for this record.</p>
+  </span>
+
+  <span ng-if="ourData.hasPhotos === true">
+    <div class="row text-center text-lg-left">
+      <div class="col-lg-3 col-md-4 col-xs-6" ng-repeat="image in ourData.photos">
+        <a href="{{ image.path }}" class="d-block mb-4 h-100">
+          <img class="img-fluid img-thumbnail" src="{{ image.path }}" alt="{{ image.alt }}">
+          <p><em>{{ image.alt }}</em></p>
+        </a>
+      </div>
+    </div>
+  </span>
+
+</span> <!-- end if hit -->
+
+<p class="strong">End of record.</p>
+
+<style>
+  /* make sure that all tables look neat (all descriptors are tds)*/
+  th {
+    width: 20%;
+  }
+</style>
