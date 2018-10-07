@@ -20,7 +20,7 @@
 <form>
   <div class="row">
     <div class="col">
-      <input type="number" placeholder="siteIndex" ng-model="search">
+      <input type="number" placeholder="siteIndex" ng-model="search.siteIndex">
     </div>
     <div class="col">
       <input type="text" placeholder="Surname">
@@ -50,7 +50,7 @@
     <th>Regiment</th>
     <th>Rank</th>
   </tr>
-  <tr ng-repeat="index in allData | filter:search[siteIndex]">
+  <tr ng-repeat="index in allData | filter:search">
     <td><a href="#!/queryResult/{{ index.siteIndex }}" class="btn btn-primary">View this record</a></td>
     <td>{{ index.siteIndex }}</td>
     <td>{{ index.surname }}</td>
