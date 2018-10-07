@@ -20,10 +20,10 @@
 
     <div class="row">
       <div class="col-sm">
-        <button id="doPdfExport" type="button" class="btn btn-secondary btn-lg btn-block disabled"><i class="fas fa-file-pdf"></i> Export this record to PDF (for printing)</button>
+        <button type="button" class="btn btn-secondary btn-lg btn-block disabled"><i class="fas fa-file-pdf"></i> Export this record to PDF (for printing)</button>
       </div>
       <div class="col-sm">
-        <button id="doJsonExport" type="button" class="btn btn-secondary btn-lg btn-block disabled"><i class="fab fa-js-square"></i> Download this record's raw JSON data</button>
+        <button ng-click="doJsonExport();" type="button" class="btn btn-secondary btn-lg btn-block"><i class="fab fa-js-square"></i> Download this record's raw JSON data</button>
       </div>
     </div>
 

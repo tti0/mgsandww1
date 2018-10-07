@@ -7,57 +7,10 @@
 
 <h3><i class="fas fa-search"></i> Data query</h3>
 
-<p>You can use this page to search for an Old Manunian who was killed in WW1, using data you know. As you enter more data into the fields below, the table will become smaller, showing only relevant records held. Once you have found the table row for the record you would like to view in more detail, click the blue "View this record" button in that row.</p>
+<p>You can use this page to search for an Old Manunian who was killed in WW1, using data you know.</p>
+
+<!-- TODO: GIVE MORE INFO HERE -->
 
 <p>Each record is given a <code>siteIndex</code> number. This is only for the functionality of this website, and is not held anywhere else. You can, however, enter a <code>siteIndex</code> number to quickly access a record you have previously found.</p>
 
-<p>For information about how to interpret the data you see here, please visit the Understand the data page.</p>
-
 <p>If you cannot find a record, please check the data you have entered, especially regarding spelling. If a record is missing, please contact the MGS Archives Department - details are given on the About page.</p>
-
-<hr>
-
-<form>
-  <div class="row">
-    <div class="col">
-      <input type="number" placeholder="siteIndex" ng-model="search.siteIndex">
-    </div>
-    <div class="col">
-      <input type="text" placeholder="Surname">
-    </div>
-    <div class="col">
-      <input type="text" placeholder="First name(s)">
-    </div>
-    <div class="col">
-      <input type="date" placeholder="Date of birth">
-    </div>
-    <div class="col">
-      <input type="date" placeholder="Date of death">
-    </div>
-  </div>
-</form>
-
-<hr>
-
-<table class="table table-striped">
-  <tr>
-    <th>View this record</th>
-    <th><code>siteIndex</code></th>
-    <th>Surname</th>
-    <th>First names</th>
-    <th>Date of birth</th>
-    <th>Date of death</th>
-    <th>Regiment</th>
-    <th>Rank</th>
-  </tr>
-  <tr ng-repeat="index in allData | filter:search">
-    <td><a href="#!/queryResult/{{ index.siteIndex }}" class="btn btn-primary">View this record</a></td>
-    <td>{{ index.siteIndex }}</td>
-    <td>{{ index.surname }}</td>
-    <td>{{ index.firstnames }}</td>
-    <td>{{ index.dob | date:"dd/MM/yyyy" }}</td>
-    <td>{{ index.dod | date:"dd/MM/yyyy" }}</td>
-    <td>{{ index.regiment }}</td>
-    <td>{{ index.rank }}</td>
-  </tr>
-</table>
