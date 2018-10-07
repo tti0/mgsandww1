@@ -20,19 +20,19 @@
 <form>
   <div class="row">
     <div class="col">
-      <input type="text" class="form-control" placeholder="siteIndex">
+      <input type="number" placeholder="siteIndex" ng-model="search-siteIndex">
     </div>
     <div class="col">
-      <input type="text" class="form-control" placeholder="Surname">
+      <input type="text" placeholder="Surname">
     </div>
     <div class="col">
-      <input type="text" class="form-control" placeholder="First name(s)">
+      <input type="text" placeholder="First name(s)">
     </div>
     <div class="col">
-      <input type="text" class="form-control" placeholder="Date of birth">
+      <input type="date" placeholder="Date of birth">
     </div>
     <div class="col">
-      <input type="text" class="form-control" placeholder="Date of death">
+      <input type="date" placeholder="Date of death">
     </div>
   </div>
 </form>
@@ -50,7 +50,7 @@
     <th>Rank</th>
     <th>View this record</th>
   </tr>
-  <tr ng-repeat="index in allData | orderBy:'index.surname'">
+  <tr ng-repeat="index in allData | orderBy:'index.surname' | filter:search-siteIndex ">
     <td>{{ index.siteIndex }}</td>
     <td>{{ index.surname }}</td>
     <td>{{ index.firstnames }}</td>
