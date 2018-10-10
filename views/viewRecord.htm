@@ -20,11 +20,13 @@
 
     <div class="row">
       <div class="col-sm">
-        <button type="button" class="btn btn-secondary btn-lg btn-block disabled"><i class="fas fa-file-pdf"></i> Export this record to PDF (for printing)</button>
+        <button onClick="window.print();" type="button" class="btn btn-secondary btn-lg btn-block"><i class="fas fa-print"></i> Print this record</button>
       </div>
+      <!-- we can use an onClick for print, as it is a JS one-liner done in the view -->
       <div class="col-sm">
         <button ng-click="doJsonExport();" type="button" class="btn btn-secondary btn-lg btn-block"><i class="fab fa-js-square"></i> Download this record's raw JSON data</button>
       </div>
+      <!-- we have to use an ng-click for JSON, as we have to send a complex request back to Angular -->
     </div>
 
     <hr>
