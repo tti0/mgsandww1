@@ -35,14 +35,16 @@
 
   <hr>
 
-  <div class="media">
-    <span ng-if="ourData.hasPhotos === false"> <!-- if our record does not have any photos, show a no result image -->
-      <img src="lib/noresult_800x530px.png" alt="No result" class="mr-3 rounded" width="350px">
-    </span>
-    <span ng-if="ourData.hasPhotos === true"> <!-- otherwise, show the main photo -->
-      <img src="{{ ourData.photos[0].path }}" alt="{{ ourData.photos[0].alt }}" class="mr-3 rounded" width="350px">
-    </span>
-    <div class="media-body">
+  <div class="row">
+    <div class="col-sm-4">
+      <span ng-if="ourData.hasPhotos === false"> <!-- if our record does not have any photos, show a no result image -->
+        <img ng-src="lib/noresult_800x530px.png" alt="No result" class="img-fluid mr-3 rounded">
+      </span>
+      <span ng-if="ourData.hasPhotos === true"> <!-- otherwise, show the main photo -->
+        <img ng-src="{{ ourData.photos[0].path }}" alt="{{ ourData.photos[0].alt }}" class="img-fluid mr-3 rounded">
+      </span>
+    </div>
+    <div class="col-sm-8">
       <h4>
         {{ ourData.surname }},&nbsp;{{ ourData.firstnames }}
         <small class="text-muted"><code>siteIndex</code>: {{ ourData.siteIndex }}</small>
@@ -157,7 +159,7 @@
     <div class="row text-center text-lg-left">
       <div class="col-lg-3 col-md-4 col-xs-6" ng-repeat="image in ourData.photos">
         <a href="{{ image.path }}" class="d-block mb-4 h-100">
-          <img class="img-fluid img-thumbnail" src="{{ image.path }}" alt="{{ image.alt }}">
+          <img ng-src="{{ image.path }}" alt="{{ image.alt }}" class="img-fluid img-thumbnail">
           <p><em>{{ image.alt }}</em></p>
         </a>
       </div>
@@ -166,10 +168,11 @@
 
 </span> <!-- end if hit -->
 
-<p>End of record. Data from the MGS and WW1 website.</p>
+<p>End of record.</p>
 
 <style>
-  /* make sure that all tables look neat (all descriptors are tds)*/
+  /* make sure that tables look neat */
+  /* use ths because they are descriptors */
   th {
     width: 20%;
   }
