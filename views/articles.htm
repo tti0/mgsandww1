@@ -1,0 +1,25 @@
+<nav>
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#!">Home</a></li>
+    <li class="breadcrumb-item active">Articles</li>
+  </ol>
+</nav>
+
+<h3><i class="fas fa-book-reader"></i> Articles</h3>
+
+<p>To learn more about the School's links to the First World War, you can read the following articles, written by History students and the School's Archivists.</p>
+
+<span ng-repeat="i in categories">
+  <h4>{{ i.name }}</h4>
+  <div class="card-columns">
+    <span ng-repeat="j in articles">
+      <div ng-if="j.category === i.name" class="card mb-4">
+        <div class="card-body">
+          <h5 class="card-title">{{ j.title }}</h5>
+          <p class="card-text">{{ j.subtitle }}</p>
+          <a href="#!/readArticle/{{ j.id }}" class="btn btn-primary">Read</a>
+        </div>
+      </div>
+    </span>
+  </div>
+</span>

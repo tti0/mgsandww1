@@ -6,12 +6,15 @@
   <nav>
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="#!">Home</a></li>
-      <li class="breadcrumb-item active">Articles</li>
+      <li class="breadcrumb-item"><a href="#!/articles">Articles</a></li>
       <li class="breadcrumb-item active">{{ ourData.category }}</li>
       <li class="breadcrumb-item active">{{ ourData.title }}</li>
     </ol>
   </nav>
 
   <h3><i class="fas fa-book-reader"></i> Article:&nbsp;{{ ourData.title }}</h3>
+  <p class="lead">{{ ourData.subtitle }}</p>
+  <hr>
   <div showdown ng-include="ourData.source"></div>
+  <p>End of article.</p>
 </span>
